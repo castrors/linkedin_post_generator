@@ -62,7 +62,11 @@ class FormView extends StatelessWidget {
                       width: 600,
                       child: Stack(
                         children: [
-                          Image.asset('shape.png'),
+                          Image.network(
+                            'https://firebasestorage.googleapis.com/v0/b/linkdekutree-87729.appspot.com/o/shape.png?alt=media&token=6e512794-01f7-4e54-82cf-22c290442974',
+                            loadingBuilder: (context, child, loadingProgress) =>
+                                CircularProgressIndicator(),
+                          ),
                           Positioned(
                             left: 40,
                             top: 32,
