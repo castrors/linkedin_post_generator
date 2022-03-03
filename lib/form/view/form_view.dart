@@ -57,142 +57,143 @@ class FormView extends StatelessWidget {
                 color: Color(0xFF303197),
                 child: Column(
                   children: [
-                    Stack(
-                      children: [
-                        SvgPicture.asset(
-                          'shape.svg',
-                          semanticsLabel: 'background shape',
-                        ),
-                        Positioned(
-                          left: 40,
-                          top: 32,
-                          right: 80,
-                          child: Text(
-                            'Quer me contratar?',
-                            style: TextStyle(
-                                fontSize: 70,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ),
-                        Positioned(
-                          left: 40,
-                          top: 210,
-                          right: 60,
-                          child: Text(
-                            context.watch<FormCubit>().state.message,
-                            style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.white),
-                          ),
-                        ),
-                        Positioned(
-                          top: 360,
-                          left: 40,
-                          child: Text(
-                            'Eu me chamo:',
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Positioned(
-                          top: 390,
-                          left: 40,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Container(
-                              color: Colors.white,
-                              width: 220,
-                              height: 40,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  context.watch<FormCubit>().state.name,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.black,
-                                      backgroundColor: Colors.white,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ),
+                    Container(
+                      height: 600,
+                      width: 600,
+                      child: Stack(
+                        children: [
+                          Image.asset('shape.png'),
+                          Positioned(
+                            left: 40,
+                            top: 32,
+                            right: 80,
+                            child: Text(
+                              'Quer me contratar?',
+                              style: TextStyle(
+                                  fontSize: 70,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          top: 360,
-                          left: 340,
-                          child: Text(
-                            'Quero trabalhar como:',
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Positioned(
-                          top: 390,
-                          left: 340,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Container(
-                              color: Colors.white,
-                              width: 220,
-                              height: 40,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  context
-                                      .watch<FormCubit>()
-                                      .state
-                                      .jobDescription,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.black,
-                                      backgroundColor: Colors.white,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ),
+                          Positioned(
+                            left: 40,
+                            top: 210,
+                            right: 60,
+                            child: Text(
+                              context.watch<FormCubit>().state.message,
+                              style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          top: 470,
-                          left: 40,
-                          child: Text(
-                            'Vamos conversar?',
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                          Positioned(
+                            top: 360,
+                            left: 40,
+                            child: Text(
+                              'Eu me chamo:',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
-                        ),
-                        Positioned(
-                          top: 500,
-                          left: 40,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Container(
-                              color: Colors.white,
-                              width: 520,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  context.watch<FormCubit>().state.email,
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    backgroundColor: Colors.white,
-                                    fontWeight: FontWeight.w700,
+                          Positioned(
+                            top: 390,
+                            left: 40,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Container(
+                                color: Colors.white,
+                                width: 220,
+                                height: 40,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    context.watch<FormCubit>().state.name,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        backgroundColor: Colors.white,
+                                        fontWeight: FontWeight.w700),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                          Positioned(
+                            top: 360,
+                            left: 340,
+                            child: Text(
+                              'Quero trabalhar como:',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Positioned(
+                            top: 390,
+                            left: 340,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Container(
+                                color: Colors.white,
+                                width: 220,
+                                height: 40,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    context
+                                        .watch<FormCubit>()
+                                        .state
+                                        .jobDescription,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        backgroundColor: Colors.white,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 470,
+                            left: 40,
+                            child: Text(
+                              'Vamos conversar?',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Positioned(
+                            top: 500,
+                            left: 40,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Container(
+                                color: Colors.white,
+                                width: 520,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    context.watch<FormCubit>().state.email,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      backgroundColor: Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
