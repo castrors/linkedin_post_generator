@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:linkedin_post_generator/counter/counter.dart';
+import 'package:linkedin_post_generator/form/view/form_page.dart';
 import 'package:linkedin_post_generator/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -17,9 +17,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
+        appBarTheme: const AppBarTheme(color: Color(0xFF303197)),
         colorScheme: ColorScheme.fromSwatch(
-          accentColor: const Color(0xFF13B9FF),
+          accentColor: const Color(0xFF303197),
         ),
       ),
       localizationsDelegates: const [
@@ -27,7 +27,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: const FormPage(),
     );
   }
 }
