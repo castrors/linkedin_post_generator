@@ -15,7 +15,6 @@ jobs:
     - uses: subosito/flutter-action@v1
     - run: flutter pub get
     - run: flutter build web --release -t lib/main_development.dart
-    - run: cp -r assets/ build/web/assets
 
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v1.1
