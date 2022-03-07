@@ -95,7 +95,7 @@ class FormView extends StatelessWidget {
                   color: context.watch<FormCubit>().state.topColor,
                   child: Column(
                     children: [
-                      Container(
+                      SizedBox(
                         height: 600,
                         width: 600,
                         child: Column(
@@ -136,35 +136,35 @@ class FormView extends StatelessWidget {
                                     .watch<FormCubit>()
                                     .state
                                     .bottomColor,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    Container(
-                                      color: Colors.blue,
-                                      child: Row(
-                                        children: [
-                                          OutputField(
-                                            title: 'Eu me chamo: ',
-                                            value: context
-                                                .watch<FormCubit>()
-                                                .state
-                                                .name,
-                                          ),
-                                          OutputField(
-                                            title: 'Quero trabalhar como: ',
-                                            value: context
-                                                .watch<FormCubit>()
-                                                .state
-                                                .jobDescription,
-                                          )
-                                        ],
+                                child: Expanded(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.stretch,
+                                    children: [
+                                      SizedBox(
+                                        height: 114,
+                                        child: Row(
+                                          children: [
+                                            OutputField(
+                                              title: 'Eu me chamo: ',
+                                              value: context
+                                                  .watch<FormCubit>()
+                                                  .state
+                                                  .name,
+                                            ),
+                                            OutputField(
+                                              title: 'Quero trabalhar como: ',
+                                              value: context
+                                                  .watch<FormCubit>()
+                                                  .state
+                                                  .jobDescription,
+                                            )
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                    Expanded(
-                                      child: Container(
-                                        color: Colors.red,
+                                      SizedBox(
+                                        height: 114,
                                         child: OutputField(
                                           title: 'Vamos conversar? ',
                                           value: context
@@ -172,9 +172,9 @@ class FormView extends StatelessWidget {
                                               .state
                                               .email,
                                         ),
-                                      ),
-                                    )
-                                  ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
