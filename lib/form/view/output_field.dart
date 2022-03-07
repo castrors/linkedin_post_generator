@@ -28,15 +28,23 @@ class OutputField extends StatelessWidget {
             SizedBox(
               height: 8,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                value,
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  backgroundColor: Colors.white,
-                  fontWeight: FontWeight.w700,
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.white,
+              ),
+              
+              width: 220,
+              height: 48,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  value,
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      backgroundColor: Colors.white,
+                      fontWeight: FontWeight.w700),
                 ),
               ),
             ),
