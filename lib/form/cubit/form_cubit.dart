@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:linkedin_post_generator/form/model/post.dart';
 
 class FormCubit extends Cubit<Post> {
@@ -16,5 +17,9 @@ class FormCubit extends Cubit<Post> {
       );
   void setMessage(String message) => emit(
         state.copyWith(message: message),
+      );
+
+  void setTheme(Color topColor, Color bottomColor) => emit(
+        state.copyWith(topColor: topColor, bottomColor: bottomColor),
       );
 }
