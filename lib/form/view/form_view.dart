@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:linkedin_post_generator/form/cubit/form_cubit.dart';
+import 'package:linkedin_post_generator/form/view/output_field.dart';
 import 'package:linkedin_post_generator/l10n/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:linkedin_post_generator/utils.dart';
@@ -60,139 +61,85 @@ class FormView extends StatelessWidget {
                     Container(
                       height: 600,
                       width: 600,
-                      child: Stack(
+                      child: Column(
                         children: [
-                          Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/linkdekutree-87729.appspot.com/o/shape.png?alt=media&token=6e512794-01f7-4e54-82cf-22c290442974',
-                            loadingBuilder: (context, child, loadingProgress) =>
-                                CircularProgressIndicator(),
-                          ),
-                          Positioned(
-                            left: 40,
-                            top: 32,
-                            right: 80,
-                            child: Text(
-                              'Quer me contratar?',
-                              style: TextStyle(
-                                  fontSize: 70,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-                          ),
-                          Positioned(
-                            left: 40,
-                            top: 210,
-                            right: 60,
-                            child: Text(
-                              context.watch<FormCubit>().state.message,
-                              style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.white),
-                            ),
-                          ),
-                          Positioned(
-                            top: 360,
-                            left: 40,
-                            child: Text(
-                              'Eu me chamo:',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          Positioned(
-                            top: 390,
-                            left: 40,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Container(
-                                color: Colors.white,
-                                width: 220,
-                                height: 40,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    context.watch<FormCubit>().state.name,
+                          Expanded(
+                            flex: 11,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 42.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(
+                                    'Quer me\ncontratar?',
                                     style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        backgroundColor: Colors.white,
-                                        fontWeight: FontWeight.w700),
+                                        fontSize: 70,
+                                        fontWeight: FontWeight.bold,
+                                        height: 0.88,
+                                        color: Colors.white),
                                   ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            top: 360,
-                            left: 340,
-                            child: Text(
-                              'Quero trabalhar como:',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          Positioned(
-                            top: 390,
-                            left: 340,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Container(
-                                color: Colors.white,
-                                width: 220,
-                                height: 40,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
+                                  Text(
                                     context
-                                        .watch<FormCubit>()
-                                        .state
-                                        .jobDescription,
+                                            .watch<FormCubit>()
+                                            .state
+                                            .message
+                                            .isEmpty
+                                        ? '“Escreva uma mensagem pessoal ao lado para tornar o seu post único.”'
+                                        : context
+                                            .watch<FormCubit>()
+                                            .state
+                                            .message,
                                     style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.black,
-                                        backgroundColor: Colors.white,
-                                        fontWeight: FontWeight.w700),
+                                        fontSize: 24,
+                                        height: 1.4,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.white),
                                   ),
-                                ),
+                                ],
                               ),
                             ),
                           ),
-                          Positioned(
-                            top: 470,
-                            left: 40,
-                            child: Text(
-                              'Vamos conversar?',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          Positioned(
-                            top: 500,
-                            left: 40,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Container(
-                                color: Colors.white,
-                                width: 520,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    context.watch<FormCubit>().state.email,
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.black,
-                                      backgroundColor: Colors.white,
-                                      fontWeight: FontWeight.w700,
-                                    ),
+                          Expanded(
+                            flex: 9,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 28),
+                              color: Colors.red,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Row(
+                                    children: [
+                                      OutputField(
+                                        title: 'Eu me chamo: ',
+                                        value: context
+                                            .watch<FormCubit>()
+                                            .state
+                                            .name,
+                                      ),
+                                      OutputField(
+                                        title: 'Quero trabalhar como: ',
+                                        value: context
+                                            .watch<FormCubit>()
+                                            .state
+                                            .jobDescription,
+                                      )
+                                    ],
                                   ),
-                                ),
+                                  Center(
+                                    child: OutputField(
+                                      title: 'Vamos conversar? ',
+                                      value: context
+                                          .watch<FormCubit>()
+                                          .state
+                                          .email,
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                           ),

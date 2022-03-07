@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:linkedin_post_generator/form/view/form_page.dart';
 import 'package:linkedin_post_generator/l10n/l10n.dart';
 
@@ -17,6 +18,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        textTheme: GoogleFonts.openSansTextTheme(),
         appBarTheme: const AppBarTheme(color: Color(0xFF303197)),
         colorScheme: ColorScheme.fromSwatch(
           accentColor: const Color(0xFF303197),
