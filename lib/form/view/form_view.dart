@@ -141,36 +141,34 @@ class FormView extends StatelessWidget {
                                   crossAxisAlignment:
                                       CrossAxisAlignment.stretch,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 8.0),
-                                      child: Row(
-                                        children: [
-                                          OutputField(
-                                            title: 'Eu me chamo: ',
-                                            value: context
-                                                .watch<FormCubit>()
-                                                .state
-                                                .name,
-                                          ),
-                                          OutputField(
-                                            title: 'Quero trabalhar como: ',
-                                            value: context
-                                                .watch<FormCubit>()
-                                                .state
-                                                .jobDescription,
-                                          )
-                                        ],
-                                      ),
+                                    Row(
+                                      children: [
+                                        OutputField(
+                                          title: 'Eu me chamo: ',
+                                          value: context
+                                              .watch<FormCubit>()
+                                              .state
+                                              .name,
+                                        ),
+                                        OutputField(
+                                          title: 'Quero trabalhar como: ',
+                                          value: context
+                                              .watch<FormCubit>()
+                                              .state
+                                              .jobDescription,
+                                        )
+                                      ],
                                     ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 8.0),
-                                      child: OutputField(
-                                        title: 'Vamos conversar? ',
-                                        value: context
-                                            .watch<FormCubit>()
-                                            .state
-                                            .email,
+                                    Expanded(
+                                      child: Positioned(
+                                        top: 0,
+                                        child: OutputField(
+                                          title: 'Vamos conversar? ',
+                                          value: context
+                                              .watch<FormCubit>()
+                                              .state
+                                              .email,
+                                        ),
                                       ),
                                     )
                                   ],
