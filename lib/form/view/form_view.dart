@@ -141,27 +141,30 @@ class FormView extends StatelessWidget {
                                   crossAxisAlignment:
                                       CrossAxisAlignment.stretch,
                                   children: [
-                                    Row(
-                                      children: [
-                                        OutputField(
-                                          title: 'Eu me chamo: ',
-                                          value: context
-                                              .watch<FormCubit>()
-                                              .state
-                                              .name,
-                                        ),
-                                        OutputField(
-                                          title: 'Quero trabalhar como: ',
-                                          value: context
-                                              .watch<FormCubit>()
-                                              .state
-                                              .jobDescription,
-                                        )
-                                      ],
+                                    Container(
+                                      color: Colors.blue,
+                                      child: Row(
+                                        children: [
+                                          OutputField(
+                                            title: 'Eu me chamo: ',
+                                            value: context
+                                                .watch<FormCubit>()
+                                                .state
+                                                .name,
+                                          ),
+                                          OutputField(
+                                            title: 'Quero trabalhar como: ',
+                                            value: context
+                                                .watch<FormCubit>()
+                                                .state
+                                                .jobDescription,
+                                          )
+                                        ],
+                                      ),
                                     ),
                                     Expanded(
-                                      child: Positioned(
-                                        top: 0,
+                                      child: Container(
+                                        color: Colors.red,
                                         child: OutputField(
                                           title: 'Vamos conversar? ',
                                           value: context
