@@ -142,8 +142,7 @@ class FormView extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.stretch,
                                     children: [
-                                      SizedBox(
-                                        height: 114,
+                                      Expanded(
                                         child: Row(
                                           children: [
                                             OutputField(
@@ -163,15 +162,12 @@ class FormView extends StatelessWidget {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(
-                                        height: 114,
-                                        child: OutputField(
-                                          title: 'Vamos conversar? ',
-                                          value: context
-                                              .watch<FormCubit>()
-                                              .state
-                                              .email,
-                                        ),
+                                      OutputField(
+                                        title: 'Vamos conversar? ',
+                                        value: context
+                                            .watch<FormCubit>()
+                                            .state
+                                            .email,
                                       )
                                     ],
                                   ),
