@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:linkedin_post_generator/form/cubit/form_cubit.dart';
 import 'package:linkedin_post_generator/form/view/color_picker_button.dart';
@@ -131,46 +132,41 @@ class FormView extends StatelessWidget {
                             Expanded(
                               flex: 9,
                               child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 28),
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 16,
+                                  horizontal: 24,
+                                ),
                                 color: context
                                     .watch<FormCubit>()
                                     .state
                                     .bottomColor,
-                                child: Expanded(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.stretch,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          children: [
-                                            OutputField(
-                                              title: 'Eu me chamo: ',
-                                              value: context
-                                                  .watch<FormCubit>()
-                                                  .state
-                                                  .name,
-                                            ),
-                                            OutputField(
-                                              title: 'Quero trabalhar como: ',
-                                              value: context
-                                                  .watch<FormCubit>()
-                                                  .state
-                                                  .jobDescription,
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                      OutputField(
+                                child: StaggeredGrid.count(
+                                  crossAxisCount: 2,
+                                  children: [
+                                    OutputField(
+                                      title: 'Eu me chamo: ',
+                                      value:
+                                          context.watch<FormCubit>().state.name,
+                                    ),
+                                    OutputField(
+                                      title: 'Quero trabalhar como: ',
+                                      value: context
+                                          .watch<FormCubit>()
+                                          .state
+                                          .jobDescription,
+                                    ),
+                                    StaggeredGridTile.count(
+                                      crossAxisCellCount: 2,
+                                      mainAxisCellCount: 1,
+                                      child: OutputField(
                                         title: 'Vamos conversar? ',
                                         value: context
                                             .watch<FormCubit>()
                                             .state
                                             .email,
-                                      )
-                                    ],
-                                  ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),

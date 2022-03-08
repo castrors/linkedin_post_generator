@@ -12,7 +12,8 @@ class OutputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: 115,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
