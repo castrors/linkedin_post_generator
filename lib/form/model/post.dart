@@ -35,7 +35,7 @@ class Post {
     );
   }
 
-  static Post get empty => Post(
+  static final Post empty = Post(
         name: '',
         jobDescription: '',
         email: '',

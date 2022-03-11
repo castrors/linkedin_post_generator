@@ -8,11 +8,12 @@ class SubtitleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       subtitle,
-      style: TextStyle(
-          fontSize: 24,
-          height: 1.4,
-          fontWeight: FontWeight.w400,
-          color: Colors.white),
+      style: const TextStyle(
+        fontSize: 24,
+        height: 1.4,
+        fontWeight: FontWeight.w400,
+        color: Colors.white,
+      ),
     );
   }
 }

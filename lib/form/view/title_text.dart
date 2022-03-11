@@ -12,11 +12,12 @@ class TitleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: TextStyle(
-          fontSize: 70,
-          fontWeight: FontWeight.bold,
-          height: 0.88,
-          color: Colors.white),
+      style: const TextStyle(
+        fontSize: 70,
+        fontWeight: FontWeight.bold,
+        height: 0.88,
+        color: Colors.white,
+      ),
     );
   }
 }

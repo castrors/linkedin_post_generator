@@ -15,18 +15,19 @@ class OutputField extends StatelessWidget {
     return SizedBox(
       height: 115,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
               title,
-              style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontSize: 18,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Container(
@@ -34,18 +35,18 @@ class OutputField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 color: Colors.white,
               ),
-              
               width: 220,
               height: 48,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8),
                 child: Text(
                   value,
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      backgroundColor: Colors.white,
-                      fontWeight: FontWeight.w700),
+                  style: const TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                    backgroundColor: Colors.white,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
             ),
