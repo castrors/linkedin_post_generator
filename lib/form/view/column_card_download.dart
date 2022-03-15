@@ -4,9 +4,9 @@ import 'package:linkedin_post_generator/form/view/download_card.dart';
 import 'package:linkedin_post_generator/form/view/download_row.dart';
 
 class ColumnCardDownload extends StatelessWidget {
-  ColumnCardDownload({
-    Key? key,
-  }) : super(key: key);
+  ColumnCardDownload({required this.formKey});
+
+  final GlobalKey<FormState> formKey;
 
   final GlobalKey _globalKey = GlobalKey();
 
@@ -16,7 +16,7 @@ class ColumnCardDownload extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        DownloadRow(globalKey: _globalKey),
+        DownloadRow(globalKey: _globalKey, formKey: formKey),
         DownloadCard(globalKey: _globalKey),
         const ChangeThemeView(),
       ],

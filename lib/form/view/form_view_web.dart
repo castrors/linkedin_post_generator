@@ -6,28 +6,38 @@ import 'package:linkedin_post_generator/form/view/column_input_fields_view.dart'
 import 'package:linkedin_post_generator/l10n/l10n.dart';
 
 class FormViewWeb extends StatelessWidget {
-  const FormViewWeb({Key? key}) : super(key: key);
+  FormViewWeb({required this.formKey});
+
+  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return Scaffold(
-      appBar:
-          AppBar(title: const Text('Crie o seu post para LinkedIn sem custo')),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Row(
           children: [
-            const Expanded(
+            Expanded(
               flex: 2,
-              child: Center(
-                child: ColumnInputFieldsView(),
+              child: Container(
+                color: const Color(0xFFF8F8F8),
+                child: Center(
+                  child: ColumnInputFieldsView(
+                    formKey: formKey,
+                  ),
+                ),
               ),
             ),
             Expanded(
               flex: 3,
-              child: Center(
-                child: ColumnCardDownload(),
+              child: Container(
+                color: Colors.white,
+                child: Center(
+                  child: ColumnCardDownload(
+                    formKey: formKey,
+                  ),
+                ),
               ),
             )
           ],

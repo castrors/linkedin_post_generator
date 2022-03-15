@@ -6,7 +6,9 @@ import 'package:linkedin_post_generator/form/view/column_input_fields_view.dart'
 import 'package:linkedin_post_generator/l10n/l10n.dart';
 
 class FormViewMobile extends StatelessWidget {
-  const FormViewMobile({Key? key}) : super(key: key);
+  const FormViewMobile({required this.formKey});
+
+  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +20,15 @@ class FormViewMobile extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Column(
             children: [
-              const ColumnInputFieldsView(),
+              ColumnInputFieldsView(
+                formKey: formKey,
+              ),
               const SizedBox(
                 height: 16,
               ),
-              ColumnCardDownload()
+              ColumnCardDownload(
+                formKey: formKey,
+              )
             ],
           ),
         ),

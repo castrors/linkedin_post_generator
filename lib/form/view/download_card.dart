@@ -7,7 +7,10 @@ import 'package:linkedin_post_generator/form/view/subtitle_text.dart';
 import 'package:linkedin_post_generator/form/view/title_text.dart';
 
 class DownloadCard extends StatelessWidget {
-  const DownloadCard({Key? key, required this.globalKey}) : super(key: key);
+  const DownloadCard({
+    Key? key,
+    required this.globalKey,
+  }) : super(key: key);
 
   final GlobalKey globalKey;
 
