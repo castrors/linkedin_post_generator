@@ -19,7 +19,7 @@ class FormCubit extends Cubit<Post> {
         state.copyWith(message: message),
       );
 
-  void setTheme(Color topColor, Color bottomColor) => emit(
+  void setTheme({required Color topColor, required Color bottomColor}) => emit(
         state.copyWith(topColor: topColor, bottomColor: bottomColor),
       );
 }

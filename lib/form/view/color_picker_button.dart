@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ColorPickerButton extends StatelessWidget {
-  const ColorPickerButton(this.topColor, this.bottomColor, {Key? key})
-      : super(key: key);
+  const ColorPickerButton({required this.topColor, required this.bottomColor});
 
   final Color topColor;
   final Color bottomColor;
