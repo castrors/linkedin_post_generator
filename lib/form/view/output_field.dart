@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:linkedin_post_generator/utils/screen_size.dart';
 
 class OutputField extends StatelessWidget {
   const OutputField({
@@ -15,14 +16,14 @@ class OutputField extends StatelessWidget {
     return SizedBox(
       height: 115,
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(isMobile(context) ? 8 : 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
               title,
-              style: const TextStyle(
-                fontSize: 18,
+              style: TextStyle(
+                fontSize: isMobile(context) ? 13 : 18,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),

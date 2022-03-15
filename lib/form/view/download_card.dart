@@ -59,11 +59,11 @@ class DownloadCard extends StatelessWidget {
                         crossAxisCount: 2,
                         children: [
                           OutputField(
-                            title: 'Eu me chamo: ',
+                            title: 'Eu me chamo:',
                             value: context.watch<FormCubit>().state.name,
                           ),
                           OutputField(
-                            title: 'Quero trabalhar como: ',
+                            title: 'Quero trabalhar como:',
                             value:
                                 context.watch<FormCubit>().state.jobDescription,
                           ),
@@ -71,7 +71,7 @@ class DownloadCard extends StatelessWidget {
                             crossAxisCellCount: 2,
                             mainAxisCellCount: 1,
                             child: OutputField(
-                              title: 'Vamos conversar? ',
+                              title: 'Vamos conversar?',
                               value: context.watch<FormCubit>().state.email,
                             ),
                           ),

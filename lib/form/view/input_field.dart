@@ -27,6 +27,7 @@ class InputField extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                   fontSize: 18,
                   height: 1.2,
+                  color: Colors.black
                 ),
               ),
               const TextSpan(

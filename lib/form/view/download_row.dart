@@ -1,6 +1,7 @@
 import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:linkedin_post_generator/utils/file_utils.dart';
+import 'package:linkedin_post_generator/utils/screen_size.dart';
 
 class DownloadRow extends StatelessWidget {
   const DownloadRow({
@@ -24,9 +25,7 @@ class DownloadRow extends StatelessWidget {
             'Seu post vai ficar assim: ',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(
-            width: 240,
-          ),
+          SizedBox(width: isMobile(context) ? 10 : 240),
           TextButton(
             style: ButtonStyle(
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(

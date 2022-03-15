@@ -22,6 +22,7 @@ class FormViewWeb extends StatelessWidget {
               flex: 2,
               child: Container(
                 color: const Color(0xFFF8F8F8),
+                padding: const EdgeInsets.symmetric(horizontal: 66),
                 child: Center(
                   child: ColumnInputFieldsView(
                     formKey: formKey,
